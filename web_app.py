@@ -1,8 +1,4 @@
-#!/usr/bin/env python3
-"""
-Code Roaster - Web Application
-Production-ready Flask app for hosting
-"""
+
 
 import os
 import json
