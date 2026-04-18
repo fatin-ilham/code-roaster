@@ -4,7 +4,8 @@
 
 AI-powered code review with attitude. Get your code roasted by Aiden Pearce (TheFox) using local AI.
 
-![Screenshot](https://via.placeholder.com/800x400/0a0a0f/00d4ff?text=CTOS+Code+Profiler)
+![Screenshot](<img width="1911" height="908" alt="image" src="https://github.com/user-attachments/assets/3ca8ab84-bad0-4888-9d99-d83e129945c1" />
+)
 
 ## 🎮 Features
 
@@ -80,7 +81,9 @@ python roaster.py ./project --ext .py .js .ts
 
 | CTOS Interface | Aiden Roasting |
 |---------------|----------------|
-| ![UI](screenshots/ui.png) | ![Roast](screenshots/roast.png) |
+| ![UI](<img width="934" height="710" alt="image" src="https://github.com/user-attachments/assets/aacb6bda-7a9d-4dc1-97c2-08228d5a954f" />
+) | ![Roast](<img width="936" height="814" alt="image" src="https://github.com/user-attachments/assets/c438b8fd-5c72-4f06-ae41-8f127bdd0acb" />
+) |
 
 ## 🦊 TheFox's Roast Style
 
