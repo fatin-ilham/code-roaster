@@ -52,7 +52,7 @@ MODEL=phi4-mini
 python web_app.py
 ```
 
-Open http://localhost:5000
+Then open http://localhost:5000
 
 ## 🐳 Docker
 
