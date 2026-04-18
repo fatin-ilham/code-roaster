@@ -4,8 +4,7 @@
 
 AI-powered code review with attitude. Get your code roasted by Aiden Pearce (TheFox) using local AI.
 
-![Screenshot](<img width="1911" height="908" alt="image" src="https://github.com/user-attachments/assets/3ca8ab84-bad0-4888-9d99-d83e129945c1" />
-)
+![Screenshot](<img width="1911" height="908" alt="image" src="https://github.com/user-attachments/assets/3ca8ab84-bad0-4888-9d99-d83e129945c1" />)
 
 ## 🎮 Features
 
