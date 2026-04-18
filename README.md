@@ -106,3 +106,6 @@ MIT — Do what you want, just don't make Aiden angry!
 ---
 
 **Note:** This is a fan project. Watch Dogs and Aiden Pearce are trademarks of Ubisoft.
+
+
+Built with ❤️ by [Fatin Ilham](https://github.com/fatin-ilham)
