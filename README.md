@@ -81,9 +81,7 @@ python roaster.py ./project --ext .py .js .ts
 
 | CTOS Interface | Aiden Roasting |
 |---------------|----------------|
-| ![UI](<img width="934" height="710" alt="image" src="https://github.com/user-attachments/assets/aacb6bda-7a9d-4dc1-97c2-08228d5a954f" />
-) | ![Roast](<img width="936" height="814" alt="image" src="https://github.com/user-attachments/assets/c438b8fd-5c72-4f06-ae41-8f127bdd0acb" />
-) |
+| ![UI](<img width="934" height="710" alt="image" src="https://github.com/user-attachments/assets/aacb6bda-7a9d-4dc1-97c2-08228d5a954f" />) | ![Roast](<img width="936" height="814" alt="image" src="https://github.com/user-attachments/assets/c438b8fd-5c72-4f06-ae41-8f127bdd0acb" />) |
 
 ## 🦊 TheFox's Roast Style
 
