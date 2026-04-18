@@ -15,7 +15,7 @@ import ollama
 load_dotenv()
 
 # Configuration
-MODEL = os.getenv("MODEL", "qwen2.5:3b")
+MODEL = os.getenv("MODEL", "") #Check README file for the model names
 FLASK_PORT = int(os.getenv("FLASK_PORT", "5000"))
 FLASK_HOST = os.getenv("FLASK_HOST", "0.0.0.0")
 RATE_LIMIT = int(os.getenv("RATE_LIMIT", "10"))
