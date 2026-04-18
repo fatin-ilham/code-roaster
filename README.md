@@ -101,7 +101,7 @@ python roaster.py ./project --ext .py .js .ts
 
 ## 📝 License
 
-MIT — Do what you want, just don't make Aiden angry.
+MIT — Do what you want, just don't make Aiden angry!
 
 ---
 
