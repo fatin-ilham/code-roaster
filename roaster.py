@@ -4,14 +4,9 @@ import argparse
 import os
 import sys
 from pathlib import Path
-import requests
-from dotenv import load_dotenv
+import ollama
 
-load_dotenv()
-
-MODEL = os.getenv("MODEL", "meta-llama/llama-3.1-8b-instruct")
-OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
-OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY", "")
+MODEL = "qwen2.5:3b"
 
 SYSTEM_PROMPT = """You are a burned-out senior engineer who's seen too much.
 You haven't slept in 48 hours. You're on your 5th coffee. You just watched a junior dev push code to production that crashed the entire system.
@@ -64,22 +59,15 @@ def roast_code(code, filename="code"):
 Be brutal but constructive. What's wrong with this code?"""
     
     try:
-        headers = {
-            "Authorization": f"Bearer {OPENROUTER_API_KEY}",
-            "Content-Type": "application/json",
-            "HTTP-Referer": "https://github.com/code-roaster",
-        }
-        payload = {
-            "model": MODEL,
-            "messages": [
+        response = ollama.chat(
+            model=MODEL,
+            messages=[
                 {"role": "system", "content": SYSTEM_PROMPT},
                 {"role": "user", "content": prompt}
             ],
-            "temperature": 0.8
-        }
-        response = requests.post(OPENROUTER_URL, headers=headers, json=payload)
-        response.raise_for_status()
-        return response.json()["choices"][0]["message"]["content"].strip()
+            options={"temperature": 0.8}
+        )
+        return response["message"]["content"].strip()
     except Exception as e:
         return f"Failed to generate roast: {e}"
 
