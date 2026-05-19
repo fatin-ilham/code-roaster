@@ -2,7 +2,7 @@
 
 > *"I've seen rootkits with more integrity."* — TheFox
 
-AI-powered code review with attitude. Get your code roasted by Aiden Pearce (TheFox) using local AI.
+AI-powered code review with attitude. Get your code roasted by Aiden Pearce (TheFox) using OpenRouter API.
 
 ![Screenshot](https://via.placeholder.com/800x400/0a0a0f/00d4ff?text=CTOS+Code+Profiler)
 
@@ -10,8 +10,8 @@ AI-powered code review with attitude. Get your code roasted by Aiden Pearce (The
 
 - **Watch Dogs CTOS Aesthetic** — Dark terminal UI with cyan accents
 - **Aiden Pearce Persona** — Cold, surgical code analysis from TheFox himself
-- **Local AI** — Runs on your machine with Ollama (no API keys needed)
-- **Fast Models** — Optimized for 8-16GB RAM systems
+- **OpenRouter API** — Access to top LLMs via OpenRouter (no local model needed)
+- **Fast Models** — Use qwen/qwen-2.5-72b-instruct or other powerful models
 - **Caching** — Don't wait for the same roast twice
 - **Rate Limiting** — Prevent abuse
 
@@ -20,8 +20,7 @@ AI-powered code review with attitude. Get your code roasted by Aiden Pearce (The
 ### Prerequisites
 
 - Python 3.11+
-- [Ollama](https://ollama.com) installed
-- 8GB+ RAM recommended
+- OpenRouter API key (get one at https://openrouter.ai/keys)
 
 ### Installation
 
@@ -29,11 +28,6 @@ AI-powered code review with attitude. Get your code roasted by Aiden Pearce (The
 git clone https://github.com/yourusername/code-roaster.git
 cd code-roaster
 pip install -r requirements.txt
-
-# Pull a fast model (choose one)
-ollama pull phi4-mini        # Recommended - fast & snarky
-ollama pull llama3.2:1b      # Ultra fast
-ollama pull qwen2.5:3b       # Higher quality, slower
 ```
 
 ### Configuration
@@ -42,8 +36,9 @@ ollama pull qwen2.5:3b       # Higher quality, slower
 # Copy example config
 cp .env.example .env
 
-# Edit .env to set your model
-MODEL=phi4-mini
+# Edit .env to set your OpenRouter API key and model
+OPENROUTER_API_KEY=your_openrouter_key_here
+MODEL=qwen/qwen-2.5-72b-instruct  # or any other model from OpenRouter
 ```
 
 ### Run
@@ -58,7 +53,7 @@ Open http://localhost:5000
 
 ```bash
 docker build -t code-roaster .
-docker run -p 5000:5000 -e MODEL=phi4-mini code-roaster
+docker run -p 5000:5000 -e OPENROUTER_API_KEY=your_key_here -e MODEL=qwen/qwen-2.5-72b-instruct code-roaster
 ```
 
 ## 🖥️ CLI Mode
@@ -106,3 +101,5 @@ MIT — Do what you want, just don't make Aiden angry.
 ---
 
 **Note:** This is a fan project. Watch Dogs and Aiden Pearce are trademarks of Ubisoft.
+
+**Important:** Get your OpenRouter API key from https://openrouter.ai/keys and keep it secure. Never commit it to public repositories.
