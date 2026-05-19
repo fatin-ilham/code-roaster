@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: code-roaster
+    runtime: docker
+    dockerfilePath: ./Dockerfile
+    healthCheckPath: /health
+    envVars:
+      - key: MODEL
+        value: qwen2.5:3b
+      - key: RATE_LIMIT
+        value: "10"
