@@ -7,6 +7,10 @@
   "deploy": {
     "startCommand": "gunicorn -w 2 -b 0.0.0.0:$PORT --timeout 120 web_app:app",
     "healthcheckPath": "/health",
-    "restartPolicyType": "ON_FAILURE"
+    "restartPolicyType": "ON_FAILURE",
+    "envVars": {
+      "OPENROUTER_API_KEY": "{{ secrets.OPENROUTER_API_KEY }}",
+      "MODEL": "meta-llama/llama-3.1-8b-instruct"
+    }
   }
 }

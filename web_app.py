@@ -3,19 +3,21 @@
 import os
 import json
 import hashlib
+import requests
 from datetime import datetime
 from pathlib import Path
 from functools import wraps
 
 from flask import Flask, render_template, request, jsonify
 from dotenv import load_dotenv
-import ollama
 
 # Load environment variables
 load_dotenv()
 
 # Configuration
-MODEL = os.getenv("MODEL", "") #Check README file for the model names
+OPENROUTER_API_KEY = os.getenv("OPENROUTER_API_KEY", "")
+MODEL = os.getenv("MODEL", "meta-llama/llama-3.1-8b-instruct")
+OPENROUTER_URL = "https://openrouter.ai/api/v1/chat/completions"
 FLASK_PORT = int(os.getenv("FLASK_PORT", "5000"))
 FLASK_HOST = os.getenv("FLASK_HOST", "0.0.0.0")
 RATE_LIMIT = int(os.getenv("RATE_LIMIT", "10"))
@@ -135,15 +137,22 @@ def roast():
 Be brutal but constructive. What's wrong with this code?"""
     
     try:
-        response = ollama.chat(
-            model=MODEL,
-            messages=[
+        headers = {
+            "Authorization": f"Bearer {OPENROUTER_API_KEY}",
+            "Content-Type": "application/json",
+            "HTTP-Referer": "http://localhost:5000",
+        }
+        payload = {
+            "model": MODEL,
+            "messages": [
                 {"role": "system", "content": SYSTEM_PROMPT},
                 {"role": "user", "content": prompt}
             ],
-            options={"temperature": 0.9}
-        )
-        roast_text = response["message"]["content"].strip()
+            "temperature": 0.9
+        }
+        response = requests.post(OPENROUTER_URL, headers=headers, json=payload)
+        response.raise_for_status()
+        roast_text = response.json()["choices"][0]["message"]["content"].strip()
         
         # Save to cache
         save_cached_roast(cache_key, roast_text)

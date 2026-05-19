@@ -5,7 +5,9 @@ services:
     dockerfilePath: ./Dockerfile
     healthCheckPath: /health
     envVars:
+      - key: OPENROUTER_API_KEY
+        sync: false
       - key: MODEL
-        value: qwen2.5:3b
+        value: meta-llama/llama-3.1-8b-instruct
       - key: RATE_LIMIT
         value: "10"

@@ -20,8 +20,7 @@ AI-powered code review with attitude. Get your code roasted by Aiden Pearce (The
 ### Prerequisites
 
 - Python 3.11+
-- [Ollama](https://ollama.com) installed
-- 8GB+ RAM recommended
+- [OpenRouter](https://openrouter.ai) API key
 
 ### Installation
 
@@ -29,11 +28,6 @@ AI-powered code review with attitude. Get your code roasted by Aiden Pearce (The
 git clone https://github.com/yourusername/code-roaster.git
 cd code-roaster
 pip install -r requirements.txt
-
-# Pull a fast model (choose one)
-ollama pull phi4-mini        # Recommended - fast & snarky
-ollama pull llama3.2:1b      # Ultra fast
-ollama pull qwen2.5:3b       # Higher quality, slower
 ```
 
 ### Configuration
@@ -42,8 +36,9 @@ ollama pull qwen2.5:3b       # Higher quality, slower
 # Copy example config
 cp .env.example .env
 
-# Edit .env to set your model
-MODEL=phi4-mini
+# Edit .env to set your API key and model
+OPENROUTER_API_KEY=sk-or-your-key-here
+MODEL=meta-llama/llama-3.1-8b-instruct  # See openrouter.ai/models
 ```
 
 ### Run
