@@ -614,6 +614,27 @@
             0%, 49% { opacity: 1; }
             50%, 100% { opacity: 0; }
         }
+
+        /* Footer Styles */
+        .footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--ctos-panel);
+            border-top: 1px solid var(--ctos-border);
+            border-left: 4px solid var(--ctos-cyan);
+            padding: 10px 25px;
+            font-family: 'Share Tech Mono', monospace;
+            font-size: 0.8em;
+            color: var(--ctos-text-dim);
+            text-align: center;
+            z-index: 10;
+        }
+
+        .footer p {
+            margin: 0;
+        }
     </style>
 </head>
 <body class="crt-flicker">
@@ -834,5 +855,10 @@ function example() {
             }
         });
     </script>
+    <footer class="footer">
+        <p>
+            Code Roaster © 2026 — Crafted by FATIN ILHAM
+        </p>
+    </footer>
 </body>
 </html>
